@@ -12,9 +12,12 @@
     </style>
 </head>
 <body class="bg-[#FBF9F5] text-[#2C2A29] antialiased selection:bg-[#D4A373] selection:text-white">
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-[#E6E2DD]">
+    <!-- Header cu meniu adaptat pentru mobil și desktop -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-[#E6E2DD]">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="serif text-xl tracking-wider font-semibold">ANIMA CARPATICA</a>
+            
+            <!-- Meniu Desktop -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
                 <a href="index.html" class="text-[#D4A373]">Home</a>
                 <a href="tourism.html" class="hover:text-[#D4A373] transition-colors">Tourism</a>
@@ -25,6 +28,23 @@
                 <a href="team.html" class="hover:text-[#D4A373] transition-colors">Team</a>
                 <a href="contact.html" class="hover:text-[#D4A373] transition-colors">Contact</a>
             </nav>
+
+            <!-- Buton Meniu Mobil (Hamburger) -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none cursor-pointer">
+                ☰
+            </button>
+        </div>
+
+        <!-- Meniu Mobil Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FBF9F5] border-b border-[#E6E2DD] px-6 py-4 space-y-3">
+            <a href="index.html" class="block text-sm font-medium text-[#D4A373]">Home</a>
+            <a href="tourism.html" class="block text-sm font-medium">Tourism</a>
+            <a href="winemaking.html" class="block text-sm font-medium">Winemaking</a>
+            <a href="permaculture.html" class="block text-sm font-medium">Permaculture</a>
+            <a href="agritech.html" class="block text-sm font-medium">AgriTech</a>
+            <a href="projects.html" class="block text-sm font-medium">Projects</a>
+            <a href="team.html" class="block text-sm font-medium">Team</a>
+            <a href="contact.html" class="block text-sm font-medium">Contact</a>
         </div>
     </header>
 
@@ -32,9 +52,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 space-y-8">
                 <span class="text-xs font-semibold tracking-widest uppercase text-[#D4A373] bg-[#E9E4DC] px-3 py-1 rounded-full">Carpathian Ecosystem</span>
-                <h1 class="serif text-5xl lg:text-7xl font-normal leading-[1.1]">Where high-tech precision meets the soul of nature.</h1>
+                <h1 class="serif text-5xl lg:text-7xl font-normal leading-[1.1]">Where high-tech precision, cinema and the spirit of nature converge.</h1>
                 <p class="text-lg text-[#6B6560] max-w-2xl font-light leading-relaxed">
-                    Arthouse cinematography meets tourism promotion, artisanal winemaking, sustainable permaculture, and advanced agricultural technology in the heart of the Carpathians.
+                    A multidisciplinary venture exploring tourism promotion, artisanal winemaking, sustainable permaculture, and advanced agricultural technology in the heart of the Carpathians.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-4">
                     <a href="projects.html" class="bg-[#2C2A29] text-[#FBF9F5] px-8 py-4 rounded-none text-sm font-medium tracking-widest uppercase hover:bg-[#D4A373] transition-all">Explore Projects</a>
@@ -86,5 +106,14 @@
             <p class="text-sm text-[#A39E98]">© 2026 Anima Carpatica. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Script pentru meniul mobil -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
